@@ -10,7 +10,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: speed
-    m_EventTreshold: 0.01
+    m_EventTreshold: 0.03
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3419729337606842502}
   m_Solo: 0
@@ -56,7 +56,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Wizart
+  m_Name: Personaje
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: speed
