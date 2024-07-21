@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638568594591397566
-    m_Hash: 2023475145
+      ticks: 638571312572966790
+    m_Hash: 1508242971
   m_LockFileStatus:
     m_FilePath: C:/Users/erick/OneDrive/Documentos/GitHub/GroupD_SC602_LN_Project/JungleRuins-Adventure/JungleRuins-Adventure/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638568595094822389
-    m_Hash: 2427050192
+      ticks: 638571312572976793
+    m_Hash: 1524370474
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -5304,6 +5304,7 @@ m_ResolvedPackages:
     - 2.4.1
     - 2.4.2
     - 2.5.0-exp.1
+    - 2.5.0-pre.2
     compatible:
     - 1.2.4
     - 1.3.1
@@ -5327,6 +5328,7 @@ m_ResolvedPackages:
     - 2.4.1
     - 2.4.2
     - 2.5.0-exp.1
+    - 2.5.0-pre.2
     recommended: 2.4.2
     deprecated: []
   dependencies:
