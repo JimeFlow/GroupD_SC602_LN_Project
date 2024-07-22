@@ -5,42 +5,49 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private void LoadLevel(int levelNo)
     {
         SceneManager.LoadScene(levelNo);
     }
 
+    public void WelcomeLevel()
+    {
+        LoadLevel(0);
+    }
+
     public void FirstLevel()
     {
-        int levelNo = 0;
-        LoadLevel(levelNo);
+        LoadLevel(1);
     }
 
-    public void LastLevel()
+    public void SecondLevel()
     {
-        int levelNo = SceneManager.sceneCountInBuildSettings - 1;
-        LoadLevel(levelNo);
+        LoadLevel(2);
     }
-
-    public void NextLevel()
+    /*
+    public void GameWinnerLevel()
     {
-        int levelNo = SceneManager.GetActiveScene().buildIndex + 1;
-        if (levelNo > SceneManager.sceneCountInBuildSettings - 1)
-        {
-            levelNo = SceneManager.sceneCountInBuildSettings - 1;
-        }
-        LoadLevel(levelNo);
+        LoadLevel(3);
     }
-
-    public void PreviousLevel()
+    */
+    public void GameOverLevel()
     {
-        int levelNo = SceneManager.GetActiveScene().buildIndex - 1;
-        if (levelNo > 0)
-        {
-            levelNo = 0;
-        }
-        LoadLevel(levelNo);
+        LoadLevel(3);
     }
 
     public void Quit()
