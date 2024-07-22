@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
-    private int ANIMATION_SPEED; //referencia idle 
-    private int ANIMATION_FORCE; // referencia jump
+    private int ANIMATION_SPEED;
+    private int ANIMATION_FORCE;
     private int ANIMATION_FALL;
 
     [SerializeField]
@@ -29,7 +28,7 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField]
     bool isFacingRight;
 
-    Rigidbody2D _rigidbody;
+    Rigidbody2D _rigibody;
     Animator _animator;
 
     float _inputX;
@@ -42,12 +41,11 @@ public class CharacterController2D : MonoBehaviour
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _rigibody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
 
         _gravityY = Physics2D.gravity.y;
 
-        //Aqui se define que son cada uno de las ANIMATIONS
         ANIMATION_SPEED = Animator.StringToHash("speed");
         ANIMATION_FORCE = Animator.StringToHash("force");
         ANIMATION_FALL = Animator.StringToHash("fall");
@@ -57,8 +55,6 @@ public class CharacterController2D : MonoBehaviour
     {
         HandleGrounded();
     }
-
-
 
     private void Update()
     {
@@ -72,7 +68,6 @@ public class CharacterController2D : MonoBehaviour
         HandleRotate();
         HandleMove();
     }
-
     private void HandleGrounded()
     {
         _isGrounded = IsGrounded();
@@ -90,6 +85,7 @@ public class CharacterController2D : MonoBehaviour
             {
                 _velocityY = -1.0F;
             }
+
             HandleInputJump();
         }
     }
@@ -97,13 +93,13 @@ public class CharacterController2D : MonoBehaviour
     private void HandleInputJump()
     {
         _isJumpPressed = Input.GetButton("Jump");
-        Debug.Log("Jump Pressed: " + _isJumpPressed);
+        //Debug.Log("Jump: " + _isJumpPressed);
     }
 
     private void HandleInputMove()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
-        Debug.Log("Input X: " + _inputX);
+        //Debug.Log("InputX: " + _inputX);
     }
 
     private void HandleJump()
@@ -132,19 +128,20 @@ public class CharacterController2D : MonoBehaviour
         {
             if (_velocityY >= 0.0F)
             {
-                _velocityY = -1;
+                _velocityY = -1.0F;
             }
             else
             {
                 HandleGrounded();
             }
+
             _isJumping = false;
         }
     }
 
     private void HandleMove()
     {
-        float speed = _inputX != 0.0F ? 1.0F : 0.0F;
+        float speed = _inputX != 0.0F ? 1.0F : 0.0f;
         float animatorSpeed = _animator.GetFloat(ANIMATION_SPEED);
 
         if (speed != animatorSpeed)
@@ -155,9 +152,10 @@ public class CharacterController2D : MonoBehaviour
         Vector2 velocity = new Vector2(_inputX, 0.0F) * walkSpeed * Time.fixedDeltaTime;
         velocity.y = _velocityY;
 
-        _rigidbody.velocity = velocity;
-    }
+        _rigibody.velocity = velocity;
 
+        //Debug.Log($"Velocity: {velocity}, InputX: {_inputX}, VelocityY: {_velocityY}, IsGrounded: {_isGrounded}");
+    }
 
     private void HandleRotate()
     {
@@ -170,7 +168,7 @@ public class CharacterController2D : MonoBehaviour
         if (isFacingRight != facingRight)
         {
             isFacingRight = facingRight;
-            transform.Rotate(0.0F, 180.0F, 0.0F); //Aqui se rota el sprite
+            transform.Rotate(0.0F, 180.0F, 0.0F);
         }
     }
 
@@ -186,5 +184,14 @@ public class CharacterController2D : MonoBehaviour
         yield return new WaitUntil(() => !IsGrounded());
         yield return new WaitUntil(() => IsGrounded());
         _isGrounded = true;
+    }
+
+    private void OnDrawGizmos() //Dibuja un cuadrado rojo donde esta el Ground Check
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        }
     }
 }

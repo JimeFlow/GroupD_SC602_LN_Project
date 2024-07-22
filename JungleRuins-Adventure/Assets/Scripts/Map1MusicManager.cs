@@ -7,6 +7,9 @@ public class Map1MusicManager : MonoBehaviour
     public AudioClip Theme;
     private AudioSource audioSource;
 
+    [SerializeField]
+    float volume;
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -19,6 +22,7 @@ public class Map1MusicManager : MonoBehaviour
         if (Theme != null)
         {
             audioSource.clip = Theme;
+            audioSource.volume = volume;
             audioSource.Play();
         }
         else
