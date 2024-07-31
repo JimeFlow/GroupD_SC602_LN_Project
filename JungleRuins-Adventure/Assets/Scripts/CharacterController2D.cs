@@ -1,12 +1,16 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterController2D : MonoBehaviour
 {
     private int ANIMATION_SPEED;
     private int ANIMATION_FORCE;
     private int ANIMATION_FALL;
+    private int ANIMATION_SLASH;
+    private int ANIMATION_DIE;
 
+    [Header("Movement")]
     [SerializeField]
     float walkSpeed;
 
@@ -27,6 +31,19 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField]
     bool isFacingRight;
+
+    [Header("Attack")]
+    [SerializeField]
+    Transform slashPoint;
+
+    [SerializeField]
+    float slashRadius;
+
+    [SerializeField]
+    LayerMask attackMask;
+
+    [SerializeField]
+    float dieDelay;
 
     Rigidbody2D _rigibody;
     Animator _animator;
@@ -49,6 +66,8 @@ public class CharacterController2D : MonoBehaviour
         ANIMATION_SPEED = Animator.StringToHash("speed");
         ANIMATION_FORCE = Animator.StringToHash("force");
         ANIMATION_FALL = Animator.StringToHash("fall");
+        ANIMATION_SLASH = Animator.StringToHash("slash");
+        ANIMATION_DIE = Animator.StringToHash("die");
     }
 
     private void Start()
@@ -93,13 +112,11 @@ public class CharacterController2D : MonoBehaviour
     private void HandleInputJump()
     {
         _isJumpPressed = Input.GetButton("Jump");
-        //Debug.Log("Jump: " + _isJumpPressed);
     }
 
     private void HandleInputMove()
     {
         _inputX = Input.GetAxisRaw("Horizontal");
-        //Debug.Log("InputX: " + _inputX);
     }
 
     private void HandleJump()
@@ -153,8 +170,6 @@ public class CharacterController2D : MonoBehaviour
         velocity.y = _velocityY;
 
         _rigibody.velocity = velocity;
-
-        //Debug.Log($"Velocity: {velocity}, InputX: {_inputX}, VelocityY: {_velocityY}, IsGrounded: {_isGrounded}");
     }
 
     private void HandleRotate()
@@ -184,6 +199,40 @@ public class CharacterController2D : MonoBehaviour
         yield return new WaitUntil(() => !IsGrounded());
         yield return new WaitUntil(() => IsGrounded());
         _isGrounded = true;
+    }
+
+    public void Slash()
+    {
+        _animator.SetTrigger(ANIMATION_SLASH);
+    }
+
+    public void Slash(float damage, bool isPercentage)
+    {
+        Collider2D[] colliders =
+            Physics2D.OverlapCircleAll(slashPoint.position, slashRadius, attackMask);
+
+        foreach (Collider2D collider in colliders)
+        {
+            DamageableController controller = collider.GetComponent<DamageableController>();
+            if (controller == null)
+            {
+                continue;
+            }
+
+            controller.TakeDamage(damage, isPercentage);
+        }
+    }
+
+    public void Die()
+    {
+        StartCoroutine(DieCoroutine());
+    }
+
+    private IEnumerator DieCoroutine()
+    {
+        _animator.SetTrigger(ANIMATION_DIE);
+        yield return new WaitForSeconds(dieDelay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void OnDrawGizmos() //Dibuja un cuadrado rojo donde esta el Ground Check
