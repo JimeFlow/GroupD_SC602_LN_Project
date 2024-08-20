@@ -6203,8 +6203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab79e96d5be631447a77d6f573864a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
-  isPercentage: 1
+  attackModes:
+  - name: OnSlash
+    damage: 100
+    isPercentage: 1
 --- !u!1 &734530978
 GameObject:
   m_ObjectHideFlags: 0
@@ -6471,52 +6473,6 @@ Transform:
   - {fileID: 1693863510}
   m_Father: {fileID: 1306176165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &878289788
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 878289789}
-  - component: {fileID: 878289790}
-  m_Layer: 0
-  m_Name: MusicPlayer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &878289789
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878289788}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 417.3624, y: 355.12195, z: -13.512521}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &878289790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 878289788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e15c481ee5754bd47b8e73637511bb43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Theme: {fileID: 8300000, guid: 1919d88101d3baf4aa037b8496dfc8e2, type: 3}
-  volume: 0.1
 --- !u!1 &1024669153
 GameObject:
   m_ObjectHideFlags: 0
@@ -6610,6 +6566,7 @@ MonoBehaviour:
   attackMask:
     serializedVersion: 2
     m_Bits: 256
+  slashSoundSFX: SlashSFX
   dieDelay: 1.25
 --- !u!70 &1024669158
 CapsuleCollider2D:
@@ -6957,7 +6914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc3b7396254214e9ba5561149e42e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 5
+  maxTime: 100
   timer: {fileID: 168109671}
 --- !u!1 &1068092609
 GameObject:
@@ -7539,6 +7496,55 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1651769188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1651769190}
+  - component: {fileID: 1651769189}
+  m_Layer: 0
+  m_Name: Sound Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1651769189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651769188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e48c7a4310ef8a47a6daa67801384c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    audio: {fileID: 8300000, guid: 1919d88101d3baf4aa037b8496dfc8e2, type: 3}
+  - name: SlashSFX
+    audio: {fileID: 8300000, guid: 926bce8979eccfe49860a581aba7057f, type: 3}
+--- !u!4 &1651769190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651769188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 205.51125, y: 119.90345, z: -1.3963194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693863509
 GameObject:
   m_ObjectHideFlags: 0
@@ -8247,5 +8253,5 @@ SceneRoots:
   - {fileID: 1024669154}
   - {fileID: 1077734979}
   - {fileID: 344932324}
-  - {fileID: 878289789}
   - {fileID: 1129543716}
+  - {fileID: 1651769190}

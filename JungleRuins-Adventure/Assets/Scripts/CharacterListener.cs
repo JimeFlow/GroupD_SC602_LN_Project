@@ -5,10 +5,7 @@ using UnityEngine;
 public class CharacterListener : MonoBehaviour
 {
     [SerializeField]
-    float damage;
-
-    [SerializeField]
-    bool isPercentage;
+    AttackMode[] attackModes;
 
     private CharacterController2D _character;
 
@@ -17,8 +14,22 @@ public class CharacterListener : MonoBehaviour
         _character = GetComponentInParent<CharacterController2D>();
     }
 
+    private AttackMode GetAttackMode(string name)
+    {
+        foreach (AttackMode attackMode in attackModes)
+        {
+            if (attackMode.getName().Equals(name, System.StringComparison.OrdinalIgnoreCase))
+            {
+                return attackMode;
+            }
+        }
+        return null;
+    }
+
     public void OnSlash()
     {
-        _character.Slash(damage, isPercentage);
-    }
+        AttackMode attackMode = GetAttackMode("OnSlash");
+        _character.Slash(attackMode.getDamage(), attackMode.getIsPercentage());
+    }  
 }
+

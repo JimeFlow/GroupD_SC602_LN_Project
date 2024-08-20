@@ -43,6 +43,9 @@ public class CharacterController2D : MonoBehaviour
     LayerMask attackMask;
 
     [SerializeField]
+    string slashSoundSFX;
+
+    [SerializeField]
     float dieDelay;
 
     Rigidbody2D _rigibody;
@@ -204,6 +207,7 @@ public class CharacterController2D : MonoBehaviour
     public void Slash()
     {
         _animator.SetTrigger(ANIMATION_SLASH);
+        SoundManager.Instance.PlaySFX(slashSoundSFX);
     }
 
     public void Slash(float damage, bool isPercentage)
