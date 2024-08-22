@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class MeleeController : MonoBehaviour
 {
-    [SerializeField, Tooltip("Range interval for attacks")]
-    float attackRange;
+    //[SerializeField, Tooltip("Range interval for attacks")]
+    //float attackRange;
 
-    [SerializeField, Tooltip("Amount of attacks per Range")]
-    int attackRate;
+    //[SerializeField, Tooltip("Amount of attacks per Range")]
+    //int attackRate;
 
-    CharacterController2D _character;
+    [SerializeField, Tooltip("Cooldown time between attacks in seconds")]
+    float attackCooldown;
 
     private float _attackTime;
+    private float _cooldownTimer;
+
+    CharacterController2D _character;
 
     private void Awake()
     {
@@ -20,16 +24,24 @@ public class MeleeController : MonoBehaviour
     private void Update()
     {
         _attackTime -= Time.deltaTime;
-        if (_attackTime < 0.0F)
+        _cooldownTimer -= Time.deltaTime;
+
+        if (_attackTime < 0.0f)
         {
-            _attackTime = 0.0F;
+            _attackTime = 0.0f;
         }
 
-        if (_attackTime == 0)
+        if (_cooldownTimer < 0.0f)
+        {
+            _cooldownTimer = 0.0f;
+        }
+
+        if (_attackTime == 0 && _cooldownTimer == 0)
         {
             if (Input.GetButtonUp("Fire1"))
             {
                 _character.Slash();
+                _cooldownTimer = attackCooldown;  // Reset the cooldown timer
             }
         }
     }

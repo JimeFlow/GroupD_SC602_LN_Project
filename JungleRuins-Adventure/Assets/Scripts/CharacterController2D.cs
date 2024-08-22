@@ -14,8 +14,20 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField]
     float walkSpeed;
 
+    public float MoveSpeed
+    {
+        get { return walkSpeed; }
+        set { walkSpeed = value; }
+    }
+
     [SerializeField]
     float jumpForce;
+
+    public float JumpForce
+    {
+        get { return jumpForce; }
+        set { jumpForce = value; }
+    }
 
     [SerializeField]
     float gravityMultiplier;
@@ -47,6 +59,10 @@ public class CharacterController2D : MonoBehaviour
 
     [SerializeField]
     float dieDelay;
+
+    [Header("Sound Effects")]
+    [SerializeField]
+    private string jumpSoundSFX;
 
     Rigidbody2D _rigibody;
     Animator _animator;
@@ -90,6 +106,8 @@ public class CharacterController2D : MonoBehaviour
         HandleRotate();
         HandleMove();
     }
+
+
     private void HandleGrounded()
     {
         _isGrounded = IsGrounded();
@@ -133,6 +151,8 @@ public class CharacterController2D : MonoBehaviour
             _velocityY = jumpForce;
 
             _animator.SetTrigger(ANIMATION_FORCE);
+
+            SoundManager.Instance.PlaySFX(jumpSoundSFX);
 
             StartCoroutine(WaitForGroundedCoroutine());
         }
