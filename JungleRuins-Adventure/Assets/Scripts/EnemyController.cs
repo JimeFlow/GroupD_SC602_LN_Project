@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -17,7 +16,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Tipo de Enemigo")]
     [SerializeField]
-    bool isAgroType;
+    bool isAggroType;
 
     [SerializeField]
     bool isPatrolType;
@@ -28,6 +27,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     GameObject Hit;
 
+    [SerializeField]
+    float attackCooldown = 1.0f; // Cooldown time between attacks
+
     Rigidbody2D _rigidbody;
     Animator _animator;
 
@@ -35,9 +37,10 @@ public class EnemyController : MonoBehaviour
     private bool isDead = false;
     public bool isAttacking;
 
-    private AgroController _agroController;
+    private AggroController _aggroController;
     private PatrolController _patrolController;
 
+    private float _nextAttackTime;
 
     private void Awake()
     {
@@ -48,9 +51,8 @@ public class EnemyController : MonoBehaviour
         ANIMATION_SPEED = Animator.StringToHash("speed");
         ANIMATION_ATTACK = Animator.StringToHash("attack");
 
-        _agroController = GetComponent<AgroController>();
+        _aggroController = GetComponent<AggroController>();
         _patrolController = GetComponent<PatrolController>();
-        
     }
 
     private void Start()
@@ -58,48 +60,54 @@ public class EnemyController : MonoBehaviour
         _originalPosition = transform.position;
     }
 
-    
-    private void Update()
+    public void Update()
     {
-        if(isDead) return;
+        if (isDead) return;
 
-        if(isAgroType)
+        if (isAttacking) return; 
+
+        if (isAggroType)
         {
-            _agroController.CheckAgro();
+            _aggroController.CheckAggro();
         }
 
         _animator.SetFloat(ANIMATION_SPEED, Mathf.Abs(_rigidbody.velocity.x));
-        
-
-
     }
 
     private void FixedUpdate()
     {
-        if(isDead) return;
+        if (isDead) return;
 
-        if (isAgroType)
+        if (isAttacking) return;
+
+        if (isAggroType)
         {
-            _agroController.GroundCheckWhileAgro();
+            _aggroController.GroundCheckWhileAggro();
         }
-        if (isPatrolType)
+    }
+
+    public void StartAttack()
+    {
+        if (Time.time >= _nextAttackTime)
         {
-            _patrolController.PatrolGroundCheck();
+            _nextAttackTime = Time.time + attackCooldown;
+            _animator.SetTrigger(ANIMATION_ATTACK);
+            isAttacking = true;
         }
-        
     }
 
     public void Die()
     {
-        SoundManager.Instance.PlaySFX(dieSoundSFX);
-        if(isDead) return; 
+        if (isDead) return;
+
+        //SoundManager.Instance.PlaySFX(dieSoundSFX);
         isDead = true;
         StartCoroutine(DieCoroutine());
     }
 
     private IEnumerator DieCoroutine()
     {
-        //_animator.SetTrigger(ANIMATION_DIE);
+        _animator.SetTrigger(ANIMATION_DIE);
         yield return new WaitForSeconds(dieTime);
         Destroy(gameObject);
     }
@@ -109,17 +117,34 @@ public class EnemyController : MonoBehaviour
         _animator.SetBool(ANIMATION_ATTACK, false);
         isAttacking = false;
         attackRange.GetComponent<BoxCollider2D>().enabled = true;
-
     }
 
     public void ColliderWeaponTrue()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = true;
-
     }
 
-    public void ColliderWeaponeFalse()
+    public void ColliderWeaponFalse()
     {
-        Hit.GetComponent <BoxCollider2D>().enabled = false;
+        Hit.GetComponent<BoxCollider2D>().enabled = false;
+    }
+
+    public void ResetAttackState()
+    {   
+        _animator.SetBool(ANIMATION_ATTACK, false);
+        isAttacking = false;
+        attackRange.GetComponent<BoxCollider2D>().enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            CharacterController2D controller = collision.GetComponent<CharacterController2D>();
+            if (controller != null)
+            {
+                controller.Die();
+            }
+        }
     }
 }

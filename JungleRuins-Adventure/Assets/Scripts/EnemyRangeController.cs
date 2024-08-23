@@ -19,10 +19,19 @@ public class EnemyRangeController : MonoBehaviour
         ANIMATION_ATTACK = Animator.StringToHash("attack");
     }
 
-    
+
     void Update()
     {
-        
+        if (enemy.isAttacking)
+        {
+            AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+            if (stateInfo.IsName("Attack") && stateInfo.normalizedTime >= 1.0f)
+            {
+                _animator.SetBool(ANIMATION_ATTACK, false);
+                enemy.isAttacking = false;
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,4 +44,5 @@ public class EnemyRangeController : MonoBehaviour
             GetComponent<BoxCollider2D>().enabled = false;
         }
     }
+
 }
