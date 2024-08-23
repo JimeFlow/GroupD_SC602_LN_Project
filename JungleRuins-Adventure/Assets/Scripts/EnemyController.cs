@@ -64,7 +64,12 @@ public class EnemyController : MonoBehaviour
     {
         if (isDead) return;
 
-        if (isAttacking) return; 
+        if (isAttacking) return;
+        
+        if (!isAttacking)
+        {
+            ColliderWeaponFalse();
+        }
 
         if (isAggroType)
         {
@@ -93,24 +98,24 @@ public class EnemyController : MonoBehaviour
             _nextAttackTime = Time.time + attackCooldown;
             _animator.SetTrigger(ANIMATION_ATTACK);
             isAttacking = true;
+            ColliderWeaponTrue();
         }
     }
 
     public void Die()
     {
-        if (isDead) return;
-
         //SoundManager.Instance.PlaySFX(dieSoundSFX);
+        if (isDead) return;
         isDead = true;
         StartCoroutine(DieCoroutine());
     }
-
+   
     private IEnumerator DieCoroutine()
     {
         _animator.SetTrigger(ANIMATION_DIE);
         yield return new WaitForSeconds(dieTime);
         Destroy(gameObject);
-    }
+    }    
 
     public void FinalAttackAnimation()
     {

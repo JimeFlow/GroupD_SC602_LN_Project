@@ -64,7 +64,7 @@ public class DamageableController : MonoBehaviour
             }
             else if (isEnemy)
             {
-                //Debug.Log("HIT ENEMY");
+                Debug.Log("HIT ENEMY");
                 EnemyController enemy = GetComponent<EnemyController>();
 
                 if(enemy != null)
