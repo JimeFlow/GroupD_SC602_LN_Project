@@ -16,6 +16,9 @@ public class DamageableController : MonoBehaviour
     [SerializeField]
     string breakCrateSFX;
 
+    [SerializeField]
+    bool isEnemy;
+
     private float _currentHealth;
 
     private void Awake()
@@ -57,6 +60,15 @@ public class DamageableController : MonoBehaviour
                 if (!string.IsNullOrEmpty(breakBarrelSFX))
                 {
                     SoundManager.Instance.PlaySFX(breakBarrelSFX);
+                }
+            }
+            else if (isEnemy)
+            {
+                EnemyController enemy = GetComponent<EnemyController>();
+
+                if(enemy != null)
+                {
+                    enemy.Die();
                 }
             }
 
