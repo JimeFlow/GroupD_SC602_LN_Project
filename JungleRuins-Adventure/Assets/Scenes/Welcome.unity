@@ -683,8 +683,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1326, y: -0.3012}
-  m_SizeDelta: {x: 892.9921, y: 557.9412}
+  m_AnchoredPosition: {x: 0.5111, y: -0.5893}
+  m_SizeDelta: {x: 900.1718, y: 562.4454}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897999379
 MonoBehaviour:
@@ -937,8 +937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -563.5, y: -117.7}
-  m_SizeDelta: {x: 201.8685, y: 56.3737}
+  m_AnchoredPosition: {x: -563, y: -121}
+  m_SizeDelta: {x: 227.0066, y: 54.3627}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342641691
 MonoBehaviour:
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ruins
+  m_text: Adventure
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 49bae642e04797b41bb5f0daa669ef19, type: 2}
   m_sharedMaterial: {fileID: 2319076060823245858, guid: 49bae642e04797b41bb5f0daa669ef19, type: 2}

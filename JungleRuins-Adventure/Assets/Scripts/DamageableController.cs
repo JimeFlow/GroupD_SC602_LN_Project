@@ -17,9 +17,13 @@ public class DamageableController : MonoBehaviour
     string breakCrateSFX;
 
     [SerializeField]
+    string damageEnemySFX;
+
+    [SerializeField]
     bool isEnemy;
 
     private float _currentHealth;
+    public LevelManager LevelManager;
 
     private void Awake()
     {
@@ -42,6 +46,14 @@ public class DamageableController : MonoBehaviour
             if (!string.IsNullOrEmpty(breakCrateSFX))
             {
                 SoundManager.Instance.PlaySFX(breakCrateSFX);
+            }
+        }
+
+        if (gameObject.CompareTag("Enemy"))
+        {
+            if (!string.IsNullOrEmpty(damageEnemySFX))
+            {
+                SoundManager.Instance.PlaySFX(damageEnemySFX);
             }
         }
 
@@ -75,6 +87,11 @@ public class DamageableController : MonoBehaviour
             }
 
             Destroy(gameObject);
+            if (gameObject.name == "Boss")
+            {
+                Debug.Log("BOSS DEAD");                            
+                LevelManager.GameOverLevel();
+            }
         }
     }
 

@@ -30,6 +30,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     public int attackCooldown; // Cooldown time between attacks
 
+    [Header("Sound Effects")]
+    [SerializeField]
+    private string enemyAttackSFX;
+
     Rigidbody2D _rigidbody;
     Animator _animator;
 
@@ -128,21 +132,21 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
         yield return new WaitForSeconds(attackCooldown);
         attackRange.GetComponent<BoxCollider2D>().enabled = true;
-        ColliderWeaponFalse();
-        
+        ColliderWeaponFalse();      
     }
 
     public bool ColliderWeaponTrue()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = true;
-        Debug.Log("Hitbox Activado");
+        SoundManager.Instance.PlaySFX(enemyAttackSFX);
+        //Debug.Log("Hitbox Activado");
         return true;
     }
 
     public bool ColliderWeaponFalse()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = false;
-        Debug.Log("Hitbox Desactivado");
+        // Debug.Log("Hitbox Desactivado");
         return false;
     }
 

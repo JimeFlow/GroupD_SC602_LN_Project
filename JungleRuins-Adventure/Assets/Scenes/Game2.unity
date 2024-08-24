@@ -5045,7 +5045,7 @@ Transform:
   m_GameObject: {fileID: 499600399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1498.1118, y: 91.11411, z: -10}
+  m_LocalPosition: {x: 108.6244, y: 272.58856, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9107,7 +9107,7 @@ Transform:
   m_GameObject: {fileID: 1024669153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1500, y: 66, z: 0}
+  m_LocalPosition: {x: 14, y: 276, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9173,6 +9173,7 @@ MonoBehaviour:
   slashSoundSFX: SlashSFX
   dieDelay: 1.25
   jumpSoundSFX: JumpSoundSFX
+  playerDieSFX: PlayerDieSFX
   _coinManager: {fileID: 0}
 --- !u!70 &1024669158
 CapsuleCollider2D:
@@ -9452,7 +9453,7 @@ Transform:
   m_GameObject: {fileID: 1032879412}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1498, y: 62.700005, z: -10}
+  m_LocalPosition: {x: 11.999992, y: 272.7, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9714,7 +9715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc3b7396254214e9ba5561149e42e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 100
+  maxTime: 60
   timer: {fileID: 168109671}
 --- !u!1 &1068092609
 GameObject:
@@ -10008,6 +10009,7 @@ MonoBehaviour:
   attackRange: {fileID: 497384660}
   Hit: {fileID: 1982996415}
   attackCooldown: 10
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1091121221
 Animator:
@@ -10046,7 +10048,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1091121223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11861,7 +11865,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 1563360384412630482, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
 --- !u!114 &1321609031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11900,7 +11906,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 1989307260}
   Hit: {fileID: 15092107}
-  attackCooldown: 5
+  attackCooldown: 2
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1321609033
 Animator:
@@ -14164,6 +14171,14 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 43d022d46f2543148ae7a384cc4f1b80, type: 3}
   - name: JumpSoundSFX
     audio: {fileID: 8300000, guid: 5ff9417c2862f6344b6c7b03bd20a27d, type: 3}
+  - name: PlayerDieSFX
+    audio: {fileID: 8300000, guid: 9fff6c215d3bb074c9fc952c6c52794c, type: 3}
+  - name: DamageEnemySFX
+    audio: {fileID: 8300000, guid: 99af4ac1c66ca3f4d8da2074b9be1994, type: 3}
+  - name: EnemyAttackSFX
+    audio: {fileID: 8300000, guid: 815a0d085505a8d418c4f5d0bcbfb0ad, type: 3}
+  - name: VictorySFX
+    audio: {fileID: 8300000, guid: 0b054dd99d28e45428c0466c2a29198f, type: 3}
 --- !u!4 &1651769190
 Transform:
   m_ObjectHideFlags: 0
@@ -14479,7 +14494,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 1543714679}
   breakBarrelSFX: 
   breakCrateSFX: BreakCrateSFX
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1693863513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15304,6 +15321,7 @@ MonoBehaviour:
   attackRange: {fileID: 0}
   Hit: {fileID: 0}
   attackCooldown: 0
+  enemyAttackSFX: 
   isAttacking: 0
 --- !u!114 &1790637641
 MonoBehaviour:
@@ -16366,7 +16384,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 977493567}
   breakBarrelSFX: 
   breakCrateSFX: BreakCrateSFX
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1876097438
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18371,6 +18391,63 @@ Transform:
   - {fileID: 1790637639}
   m_Father: {fileID: 2116084614}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2043404752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 168273329226992210, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240507696453617262, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
+      propertyPath: m_Name
+      value: Level Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f062107a6ae2674d9ae08d759cce809, type: 3}
 --- !u!1 &2051337443
 GameObject:
   m_ObjectHideFlags: 0
@@ -18788,3 +18865,4 @@ SceneRoots:
   - {fileID: 1651769190}
   - {fileID: 2116084614}
   - {fileID: 1550012445}
+  - {fileID: 2043404752}

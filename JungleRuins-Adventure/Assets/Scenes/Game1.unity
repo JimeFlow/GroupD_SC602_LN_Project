@@ -719,7 +719,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 518771718}
   Hit: {fileID: 1683927515}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &95974093
 Animator:
@@ -754,11 +755,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &95974095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6427,7 +6430,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.000026694843, w: 0}
+  m_margin: {x: 0, y: 0, z: -38.975533, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6694,7 +6697,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 1962631985}
   Hit: {fileID: 377324132}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &293372753
 Animator:
@@ -6729,11 +6733,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &293372755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7046,7 +7052,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: BreakBarrelSFX
   breakCrateSFX: 
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!1 &340099592
 GameObject:
   m_ObjectHideFlags: 0
@@ -7600,7 +7608,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 2084053666}
   Hit: {fileID: 1766426402}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &354826375
 Animator:
@@ -7635,11 +7644,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &354826377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8210,7 +8221,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 1269256719}
   breakBarrelSFX: 
   breakCrateSFX: BreakCrateSFX
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &484699198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8474,7 +8487,7 @@ Transform:
   m_GameObject: {fileID: 499600399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.33217, y: 96.93915, z: -10}
+  m_LocalPosition: {x: 109.3766, y: 96.93915, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9418,7 +9431,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 1515791306}
   breakBarrelSFX: 
   breakCrateSFX: BreakCrateSFX
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &656737522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9575,7 +9590,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 1006118640}
   Hit: {fileID: 1135609981}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &661567150
 Animator:
@@ -9610,11 +9626,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &661567152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9856,7 +9874,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: BreakBarrelSFX
   breakCrateSFX: 
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &734530981
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10228,7 +10248,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 513123685}
   Hit: {fileID: 1975766015}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &868992368
 Animator:
@@ -10263,11 +10284,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &868992370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10538,6 +10561,7 @@ MonoBehaviour:
   attackRange: {fileID: 0}
   Hit: {fileID: 0}
   attackCooldown: 1
+  enemyAttackSFX: 
   isAttacking: 0
 --- !u!1 &957710441
 GameObject:
@@ -10827,7 +10851,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 224646171}
   Hit: {fileID: 821288341}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1005338379
 Animator:
@@ -10862,11 +10887,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1005338381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11189,6 +11216,7 @@ MonoBehaviour:
   slashSoundSFX: SlashSFX
   dieDelay: 1.25
   jumpSoundSFX: JumpSoundSFX
+  playerDieSFX: PlayerDieSFX
   _coinManager: {fileID: 1701070012}
 --- !u!70 &1024669158
 CapsuleCollider2D:
@@ -11390,7 +11418,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: BreakBarrelSFX
   breakCrateSFX: 
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1041216748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11524,7 +11554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.3, y: 304}
+  m_AnchoredPosition: {x: 4.3, y: 199}
   m_SizeDelta: {x: 92.6094, y: 94.4288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062371572
@@ -11539,7 +11569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8fc3b7396254214e9ba5561149e42e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 100
+  maxTime: 60
   timer: {fileID: 168109671}
 --- !u!1 &1068092609
 GameObject:
@@ -12091,7 +12121,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 11845510}
   Hit: {fileID: 1346010198}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1269256722
 Animator:
@@ -12126,11 +12157,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1269256724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12324,7 +12357,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 203299813}
   Hit: {fileID: 2002713372}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1277105060
 Animator:
@@ -12359,11 +12393,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1277105062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12606,7 +12642,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 1425176242}
   Hit: {fileID: 351919055}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1335705097
 Animator:
@@ -12641,11 +12678,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1335705099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13314,7 +13353,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 1390411873}
   Hit: {fileID: 358654873}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1415589638
 Animator:
@@ -13349,11 +13389,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1415589640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14094,6 +14136,12 @@ MonoBehaviour:
     audio: {fileID: 8300000, guid: 8f54a207035dbeb4683c4bf6136e4332, type: 3}
   - name: CoinPickupSFX
     audio: {fileID: 8300000, guid: a477619ef5c71274f99597da380e0a2d, type: 3}
+  - name: PlayerDieSFX
+    audio: {fileID: 8300000, guid: 9fff6c215d3bb074c9fc952c6c52794c, type: 3}
+  - name: DamageEnemySFX
+    audio: {fileID: 8300000, guid: 99af4ac1c66ca3f4d8da2074b9be1994, type: 3}
+  - name: EnemyAttackSFX
+    audio: {fileID: 8300000, guid: 815a0d085505a8d418c4f5d0bcbfb0ad, type: 3}
 --- !u!4 &1651769190
 Transform:
   m_ObjectHideFlags: 0
@@ -14407,7 +14455,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 977493567}
   breakBarrelSFX: 
   breakCrateSFX: BreakCrateSFX
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1693863513
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14559,7 +14609,8 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 345405718}
   Hit: {fileID: 32608713}
-  attackCooldown: 5
+  attackCooldown: 1
+  enemyAttackSFX: EnemyAttackSFX
   isAttacking: 0
 --- !u!95 &1702488539
 Animator:
@@ -14594,11 +14645,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90222fd8d393864096f42769d044e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
   breakBarrelSFX: 
   breakCrateSFX: 
+  damageEnemySFX: DamageEnemySFX
   isEnemy: 1
+  LevelManager: {fileID: 0}
 --- !u!114 &1702488541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14877,7 +14930,7 @@ PolygonCollider2D:
       - {x: -6.3994484, y: 104.133736}
       - {x: -10.770962, y: 103.12514}
       - {x: -17.69554, y: 101.87893}
-      - {x: -46.682983, y: 76.744316}
+      - {x: -28.943237, y: 521.8198}
       - {x: -56.60955, y: 58.143127}
       - {x: -60.67737, y: 51.502193}
       - {x: -64.28571, y: 42.857143}
@@ -15183,7 +15236,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: BreakBarrelSFX
   breakCrateSFX: 
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1848623805
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15363,7 +15418,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: BreakBarrelSFX
   breakCrateSFX: 
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1913297512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15770,7 +15827,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 977493567}
   breakBarrelSFX: 
   breakCrateSFX: BreakCrateSFX
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &1978750290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16092,7 +16151,9 @@ MonoBehaviour:
   itemToSpawn: {fileID: 0}
   breakBarrelSFX: BreakBarrelSFX
   breakCrateSFX: 
+  damageEnemySFX: 
   isEnemy: 0
+  LevelManager: {fileID: 0}
 --- !u!61 &2034049585
 BoxCollider2D:
   m_ObjectHideFlags: 0

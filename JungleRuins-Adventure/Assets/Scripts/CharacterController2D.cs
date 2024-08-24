@@ -64,6 +64,9 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField]
     private string jumpSoundSFX;
 
+    [SerializeField]
+    private string playerDieSFX;
+
     Rigidbody2D _rigibody;
     Animator _animator;
 
@@ -257,6 +260,7 @@ public class CharacterController2D : MonoBehaviour
     private IEnumerator DieCoroutine()
     {
         _animator.SetTrigger(ANIMATION_DIE);
+        SoundManager.Instance.PlaySFX(playerDieSFX);
         yield return new WaitForSeconds(dieDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

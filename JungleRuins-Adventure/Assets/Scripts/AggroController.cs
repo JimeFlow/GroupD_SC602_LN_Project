@@ -50,20 +50,20 @@ public class AggroController : MonoBehaviour
         {
             if (transform.position.x < player.position.x)
             {
-                //Debug.Log("Moving right towards player");
+                //Debug.Log("derecha");
                 _rigidbody.velocity = new Vector2(speed, _rigidbody.velocity.y);
                 transform.localScale = new Vector2(1, 1); 
             }
             else if (transform.position.x > player.position.x) 
             {
-                //Debug.Log("Moving left towards player");
+                //Debug.Log("izquierda");
                 _rigidbody.velocity = new Vector2(-speed, _rigidbody.velocity.y);
                 transform.localScale = new Vector2(-1, 1);
             }
         }
         else
         {
-            //Debug.Log("Not grounded, stopping movement");
+            //Debug.Log("nada");
             _rigidbody.velocity = Vector2.zero;
         }
     }
