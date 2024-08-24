@@ -568,8 +568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  distance: 6
+  speed: 1
+  distance: 150
 --- !u!251 &61219300
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4065,7 +4065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 90
 --- !u!251 &438167698
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -4548,7 +4548,7 @@ Transform:
   m_GameObject: {fileID: 499600399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.42137, y: 96.58929, z: -10}
+  m_LocalPosition: {x: 108.41884, y: 96.58929, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5229,7 +5229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &570608306
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6055,7 +6055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 20
+  distance: 50
 --- !u!251 &725229074
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -6846,8 +6846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 8
+  speed: 1
+  distance: 50
 --- !u!251 &831410577
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -7321,7 +7321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &934748038
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -8712,8 +8712,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 5.5
+  speed: 1
+  distance: 50
 --- !u!251 &1042961829
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -9515,8 +9515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  distance: 6
+  speed: 1
+  distance: 150
 --- !u!251 &1141391760
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -9630,7 +9630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1172251178
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -10163,7 +10163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  distance: 10
+  distance: 90
 --- !u!251 &1249269820
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -10282,8 +10282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 8
+  speed: 1
+  distance: 50
 --- !u!251 &1274529525
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -10449,7 +10449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1320508770
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11147,8 +11147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 5.5
+  speed: 1
+  distance: 50
 --- !u!251 &1391287867
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11267,8 +11267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 7
+  speed: 1
+  distance: 50
 --- !u!251 &1404131551
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11634,7 +11634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1438375469
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -11864,7 +11864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1503226216
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -12732,7 +12732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1680199789
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -13726,7 +13726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  distance: 10
+  distance: 90
 --- !u!251 &1773496669
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -14313,7 +14313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1810677559
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -14626,7 +14626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  distance: 10
+  distance: 90
 --- !u!251 &1818135924
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -15078,7 +15078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1868948240
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -15933,8 +15933,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3988c8049c837c4caaf7bce59cda017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  distance: 7
+  speed: 1
+  distance: 50
 --- !u!251 &1934871556
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -16048,7 +16048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 50
 --- !u!251 &1934921551
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -16751,7 +16751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  distance: 5.5
+  distance: 90
 --- !u!251 &2018893115
 PlatformEffector2D:
   m_ObjectHideFlags: 0
