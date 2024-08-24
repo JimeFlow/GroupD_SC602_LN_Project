@@ -70,6 +70,7 @@ public class DamageableController : MonoBehaviour
                 if(enemy != null)
                 {
                     enemy.Die();
+                    SpawnItem();
                 }
             }
 
@@ -81,7 +82,8 @@ public class DamageableController : MonoBehaviour
     {
         if (itemToSpawn != null)
         {
-            itemToSpawn.SetActive(true);
+            //itemToSpawn.SetActive(true);
+            Instantiate(itemToSpawn, transform.position, Quaternion.identity);
         }
     }
 

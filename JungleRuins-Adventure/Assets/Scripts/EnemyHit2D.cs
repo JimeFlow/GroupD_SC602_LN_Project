@@ -9,6 +9,19 @@ public class EnemyHit2D : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             print("Damage");
+            CharacterController2D controller = collision.GetComponent<CharacterController2D>();
+            if (controller != null)
+            {
+                EnemyController enemy = GetComponentInParent<EnemyController>();
+                if (enemy != null)
+                {
+                    if (enemy.ColliderWeaponTrue() == true)
+                    {
+                        controller.Die();
+                    }
+                }
+
+            }
         }
     }
 }

@@ -124,14 +124,16 @@ public class EnemyController : MonoBehaviour
         attackRange.GetComponent<BoxCollider2D>().enabled = true;
     }
 
-    public void ColliderWeaponTrue()
+    public bool ColliderWeaponTrue()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = true;
+        return true;
     }
 
-    public void ColliderWeaponFalse()
+    public bool ColliderWeaponFalse()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = false;
+        return false;
     }
 
     public void ResetAttackState()
@@ -141,7 +143,7 @@ public class EnemyController : MonoBehaviour
         attackRange.GetComponent<BoxCollider2D>().enabled = true;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
@@ -151,5 +153,5 @@ public class EnemyController : MonoBehaviour
                 controller.Die();
             }
         }
-    }
+    }*/
 }

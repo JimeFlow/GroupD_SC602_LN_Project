@@ -67,6 +67,8 @@ public class CharacterController2D : MonoBehaviour
     Rigidbody2D _rigibody;
     Animator _animator;
 
+    public CoinManager _coinManager;
+
     float _inputX;
     float _gravityY;
     float _velocityY;
@@ -265,6 +267,15 @@ public class CharacterController2D : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            _coinManager.coinCount++;
         }
     }
 }
