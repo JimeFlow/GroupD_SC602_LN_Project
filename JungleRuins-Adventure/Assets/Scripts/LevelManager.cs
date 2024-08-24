@@ -39,6 +39,12 @@ public class LevelManager : MonoBehaviour
     {
         LoadLevel(2);
     }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("Game2");
+    }
+
     /*
     public void GameWinnerLevel()
     {

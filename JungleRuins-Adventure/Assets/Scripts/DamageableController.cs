@@ -83,7 +83,8 @@ public class DamageableController : MonoBehaviour
         if (itemToSpawn != null)
         {
             //itemToSpawn.SetActive(true);
-            Instantiate(itemToSpawn, transform.position, Quaternion.identity);
+            Vector3 spawnPosition = transform.position + new Vector3(0, 13.0f, 0);
+            Instantiate(itemToSpawn, spawnPosition, Quaternion.identity);
         }
     }
 

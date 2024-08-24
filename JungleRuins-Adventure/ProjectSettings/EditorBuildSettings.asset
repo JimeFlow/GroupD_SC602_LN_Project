@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 25a42c33c4a15304aac32e17e9440846
   - enabled: 1
     path: Assets/Scenes/Game2.unity
-    guid: 38ffc4929c79a954cb73aabd552d9073
+    guid: 52ace466a1f763947a93bae03fdbc375
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 39dc66aa886cfc845a15d50ddc7cd42f
