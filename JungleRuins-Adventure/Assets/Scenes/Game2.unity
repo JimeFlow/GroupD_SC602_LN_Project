@@ -430,7 +430,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 27.993347, y: -2.993946}
+  m_Offset: {x: 43.26947, y: -2.993946}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -441,7 +441,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 56.986694, y: 74.65092}
+  m_Size: {x: 57.697388, y: 74.65092}
   m_EdgeRadius: 0
 --- !u!1 &26542427
 GameObject:
@@ -5045,7 +5045,7 @@ Transform:
   m_GameObject: {fileID: 499600399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.52289, y: 184.591, z: -10}
+  m_LocalPosition: {x: 1498.1118, y: 91.11411, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9107,7 +9107,7 @@ Transform:
   m_GameObject: {fileID: 1024669153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16, y: 188, z: 0}
+  m_LocalPosition: {x: 1500, y: 66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9156,7 +9156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6193471ba373545b70daf482a9f8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 3000
+  walkSpeed: 6000
   jumpForce: 265
   gravityMultiplier: 50
   groundCheck: {fileID: 1511147151}
@@ -9452,7 +9452,7 @@ Transform:
   m_GameObject: {fileID: 1032879412}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.999992, y: 184.7, z: -10}
+  m_LocalPosition: {x: 1498, y: 62.700005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9980,7 +9980,7 @@ Transform:
   m_GameObject: {fileID: 1091121218}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 530, y: 63, z: 0}
+  m_LocalPosition: {x: 534.4, y: 63.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10007,7 +10007,7 @@ MonoBehaviour:
   isPatrolType: 0
   attackRange: {fileID: 497384660}
   Hit: {fileID: 1982996415}
-  attackCooldown: 5
+  attackCooldown: 10
   isAttacking: 0
 --- !u!95 &1091121221
 Animator:
@@ -10043,7 +10043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  itemToSpawn: {fileID: 8449342226477831921, guid: b62f1c865f48c8a48a2d20d1b5c8fe07, type: 3}
+  itemToSpawn: {fileID: 0}
   breakBarrelSFX: 
   breakCrateSFX: 
   isEnemy: 1
@@ -11722,7 +11722,7 @@ Transform:
   m_GameObject: {fileID: 1321609025}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1431.4, y: 84.3, z: 0}
+  m_LocalPosition: {x: 1541.7, y: 84.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11812,11 +11812,11 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31225586, y: 1.1049004}
-  m_Size: {x: 53.53784, y: 79.91561}
+  m_Offset: {x: 0.036376953, y: 1.1049004}
+  m_Size: {x: 49.354004, y: 79.91561}
   m_Direction: 0
 --- !u!50 &1321609029
 Rigidbody2D:
@@ -11833,7 +11833,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -11875,7 +11875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1024669154}
-  aggroRange: 100
+  aggroRange: 150
   attackRange: 50
   speed: 10
   groundCheck: {fileID: 730215129}
@@ -11894,13 +11894,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d12c7c4f4a33e84a919af0c2043d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dieTime: 1.5
+  dieTime: 3
   dieSoundSFX: 
   isAggroType: 1
   isPatrolType: 0
   attackRange: {fileID: 1989307260}
   Hit: {fileID: 15092107}
-  attackCooldown: 3
+  attackCooldown: 5
   isAttacking: 0
 --- !u!95 &1321609033
 Animator:
@@ -15303,7 +15303,7 @@ MonoBehaviour:
   isPatrolType: 1
   attackRange: {fileID: 0}
   Hit: {fileID: 0}
-  attackCooldown: 1
+  attackCooldown: 0
   isAttacking: 0
 --- !u!114 &1790637641
 MonoBehaviour:
@@ -17990,7 +17990,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989307260}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18029,7 +18029,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 35.725708, y: -0.40914536}
+  m_Offset: {x: 41.29956, y: -0.40914536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -18040,7 +18040,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 75.40015, y: 79.32777}
+  m_Size: {x: 63.651123, y: 79.32777}
   m_EdgeRadius: 0
 --- !u!114 &1989307263
 MonoBehaviour:

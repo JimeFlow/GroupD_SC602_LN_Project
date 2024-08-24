@@ -8,6 +8,7 @@ public class CoinManager : MonoBehaviour
 {
     public int coinCount;
     public TextMeshProUGUI coinText;
+    public GameObject blockingObject;
     
     void Start()
     {
@@ -19,9 +20,10 @@ public class CoinManager : MonoBehaviour
     {
         coinText.text = ": " + coinCount.ToString();
 
-        if(coinCount == 10) //si consigue 10 monedas
+        if(coinCount == 10) //si consigue 10 monedas 
         {
-            // logica para pasar de nivel
+            Destroy(blockingObject);
+            SoundManager.Instance.PlaySFX("TreeUnblockingSFX" ,false);
         }
     }
 }

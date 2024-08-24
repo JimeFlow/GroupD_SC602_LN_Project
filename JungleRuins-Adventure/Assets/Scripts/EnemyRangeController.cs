@@ -11,6 +11,7 @@ public class EnemyRangeController : MonoBehaviour
     public Animator _animator;
     public EnemyController enemy;
 
+    
 
     void Start()
     {
@@ -27,22 +28,33 @@ public class EnemyRangeController : MonoBehaviour
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
             if (stateInfo.IsName("Attack") && stateInfo.normalizedTime >= 1.0f)
             {
-                _animator.SetBool(ANIMATION_ATTACK, false);
-                enemy.isAttacking = false;
-                GetComponent<BoxCollider2D>().enabled = true;
+                StartCoroutine(EnableColliderAfterCooldown());
             }
         }
     }
 
+   
+      
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !enemy.isAttacking)
         {
             _animator.SetFloat(ANIMATION_SPEED, 0);
             _animator.SetBool(ANIMATION_ATTACK, true);
             enemy.isAttacking = true;
             GetComponent<BoxCollider2D>().enabled = false;
         }
+    }
+
+    private IEnumerator EnableColliderAfterCooldown()
+    {
+        
+        yield return new WaitForSeconds(enemy.attackCooldown);
+        _animator.SetBool(ANIMATION_ATTACK, false);
+        enemy.isAttacking = false;
+        GetComponent<BoxCollider2D>().enabled = true;
     }
 
 }

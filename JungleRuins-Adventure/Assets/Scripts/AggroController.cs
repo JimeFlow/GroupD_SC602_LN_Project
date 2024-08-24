@@ -89,11 +89,8 @@ public class AggroController : MonoBehaviour
 
     public void CheckAggro()
     {
-        if (ShouldAttackPlayer())
-        {
-            _enemyController.StartAttack();
-        }
-        else if (ShouldAggroPlayer())
+        
+         if (ShouldAggroPlayer())
         {
             AggroPlayer();
         }

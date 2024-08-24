@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
     GameObject Hit;
 
     [SerializeField]
-    float attackCooldown = 1.0f; // Cooldown time between attacks
+    public int attackCooldown; // Cooldown time between attacks
 
     Rigidbody2D _rigidbody;
     Animator _animator;
@@ -119,20 +119,30 @@ public class EnemyController : MonoBehaviour
 
     public void FinalAttackAnimation()
     {
+        StartCoroutine(FinalAttackAnimationCoroutine());
+    }
+
+    public IEnumerator FinalAttackAnimationCoroutine()
+    {
         _animator.SetBool(ANIMATION_ATTACK, false);
         isAttacking = false;
+        yield return new WaitForSeconds(attackCooldown);
         attackRange.GetComponent<BoxCollider2D>().enabled = true;
+        ColliderWeaponFalse();
+        
     }
 
     public bool ColliderWeaponTrue()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = true;
+        Debug.Log("Hitbox Activado");
         return true;
     }
 
     public bool ColliderWeaponFalse()
     {
         Hit.GetComponent<BoxCollider2D>().enabled = false;
+        Debug.Log("Hitbox Desactivado");
         return false;
     }
 
@@ -150,7 +160,7 @@ public class EnemyController : MonoBehaviour
             CharacterController2D controller = collision.GetComponent<CharacterController2D>();
             if (controller != null)
             {
-                controller.Die();
+                //controller.Die();
             }
         }
     }*/

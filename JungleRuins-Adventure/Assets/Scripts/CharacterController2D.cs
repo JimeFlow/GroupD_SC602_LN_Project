@@ -276,6 +276,7 @@ public class CharacterController2D : MonoBehaviour
         {
             Destroy(other.gameObject);
             _coinManager.coinCount++;
+            SoundManager.Instance.PlaySFX("CoinPickupSFX", false);
         }
     }
 }
