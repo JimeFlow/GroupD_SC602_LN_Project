@@ -8,6 +8,7 @@ TagManager:
   - Barrel
   - Enemy
   - Coin
+  - NPC
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Obstacle
   - Enemy
   - NPC
-  - 
+  - Dialogue Exclamation
   - 
   - 
   - 
