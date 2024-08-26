@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DamageableController : MonoBehaviour
 {
+    private int ANIMATION_HURT;
+    private int ANIMATION_DEAD;
+
     [SerializeField]
     float maxHealth;
 
@@ -24,6 +27,16 @@ public class DamageableController : MonoBehaviour
 
     private float _currentHealth;
     public LevelManager LevelManager;
+    public Animator _animator;
+    private Rigidbody2D _rigidbody;
+
+    private void Start()
+    {
+        ANIMATION_HURT = Animator.StringToHash("Hurt");
+        ANIMATION_DEAD = Animator.StringToHash("Dead");
+
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
 
     private void Awake()
     {
@@ -57,14 +70,36 @@ public class DamageableController : MonoBehaviour
             }
         }
 
+        if (gameObject.CompareTag("Boss"))
+        {
+            if (!string.IsNullOrEmpty(damageEnemySFX))
+            {
+                SoundManager.Instance.PlaySFX(damageEnemySFX);
+            }
+        }
+
 
         if (_currentHealth <= 0)
         {
+            if(gameObject.name == "Boss")
+            {
+                Debug.Log("BOSS DEAD");
+             
+                if(_rigidbody != null)
+                {
+                    _rigidbody.velocity = Vector2.zero;
+                }
+                StartCoroutine(BossDeathSequence());
+            }
+
+
             if (gameObject.CompareTag("Crate"))
             {
                 if (itemToSpawn != null)
                 {
                     SpawnItem();
+                    Destroy(gameObject);
+
                 }
             }
             else if (gameObject.CompareTag("Barrel"))
@@ -72,6 +107,8 @@ public class DamageableController : MonoBehaviour
                 if (!string.IsNullOrEmpty(breakBarrelSFX))
                 {
                     SoundManager.Instance.PlaySFX(breakBarrelSFX);
+                    Destroy(gameObject);
+
                 }
             }
             else if (isEnemy)
@@ -81,17 +118,18 @@ public class DamageableController : MonoBehaviour
 
                 if(enemy != null)
                 {
+                    if (_rigidbody != null)
+                    {
+                        _rigidbody.velocity = Vector2.zero;
+                    }
                     enemy.Die();
                     SpawnItem();
+                    
+
                 }
             }
 
-            Destroy(gameObject);
-            if (gameObject.name == "Boss")
-            {
-                Debug.Log("BOSS DEAD");                            
-                LevelManager.GameOverLevel();
-            }
+            
         }
     }
 
@@ -105,4 +143,17 @@ public class DamageableController : MonoBehaviour
         }
     }
 
+    private IEnumerator BossDeathSequence()
+    {
+        Debug.Log("Setting Dead animation");
+        
+        _animator.SetBool(ANIMATION_DEAD, true);
+        yield return new WaitForSeconds(2);
+
+        Debug.Log("Destroying Boss");
+        Destroy(gameObject);
+        Debug.Log("Calling GameOverLevel");
+        LevelManager.GameOverLevel();
+
+    }
 }
